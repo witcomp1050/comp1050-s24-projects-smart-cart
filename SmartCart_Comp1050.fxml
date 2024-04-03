@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< Updated upstream
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TitledPane?>
+=======
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+>>>>>>> Stashed changes
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,6 +26,7 @@
                </image>
             </ImageView>
          </content></Tab>
+<<<<<<< Updated upstream
     <Tab text="Past Trips ">
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -58,8 +66,17 @@
             </AnchorPane>
          </content></Tab>
       <Tab text="Saved Trip ">
+=======
+      <Tab text="My List">
+>>>>>>> Stashed changes
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="317.0" layoutY="319.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="54.0" text="Add" />
+                  <Button layoutX="317.0" layoutY="269.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="54.0" text="Done" />
+                  <Button layoutX="317.0" layoutY="219.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="54.0" text="Save" />
+                  <TextField layoutX="14.0" layoutY="21.0" />
+               </children></AnchorPane>
         </content>
       </Tab>
       <Tab text="My Trip ">
@@ -67,6 +84,6 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
         </content>
       </Tab>
+    <Tab text="Past Trips " />
   </tabs>
 </TabPane>
-
