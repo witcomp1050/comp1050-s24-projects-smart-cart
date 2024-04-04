@@ -25,44 +25,6 @@
             </ImageView>
          </content>
       </Tab>
-    <Tab text="Past Trips ">
-         <content>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Accordion prefHeight="371.0" prefWidth="371.0">
-                    <panes>
-                      <TitledPane animated="false" text="untitled 1">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <ScrollBar layoutX="356.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
-                      </TitledPane>
-                      <TitledPane animated="false" text="untitled 2">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <ScrollBar layoutX="356.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
-                      </TitledPane>
-                      <TitledPane animated="false" text="untitled 3">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <ScrollBar layoutX="356.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
-                      </TitledPane>
-                    </panes>
-                  </Accordion>
-               </children>
-            </AnchorPane>
-         </content></Tab>
       <Tab text="Saved Trip ">
          <content>
             <BorderPane prefHeight="200.0" prefWidth="235.0">
@@ -194,6 +156,92 @@
                   </Accordion>
                </center>
             </BorderPane>
+         </content>
+      </Tab>
+      <Tab text="Past Trips ">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Accordion prefHeight="371.0" prefWidth="371.0">
+                     <panes>
+                        <TitledPane animated="false" text="Thursday, March 14, 2024 ">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollBar layoutX="356.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
+                                    <VBox prefHeight="319.0" prefWidth="355.0">
+                                       <children>
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 1" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 2" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="44.0" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 3" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 4" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Wednesday, March 27, 2024">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollBar layoutX="356.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
+                                    <VBox prefHeight="319.0" prefWidth="355.0">
+                                       <children>
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 1" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 2" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="44.0" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 3" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 4" wrappingWidth="318.13671922683716" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
          </content>
       </Tab>
       <Tab text="My Trip ">
