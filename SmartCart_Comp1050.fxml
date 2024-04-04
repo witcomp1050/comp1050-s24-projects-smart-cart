@@ -16,14 +16,15 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="371.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
-    <Tab text="Home">
+      <Tab text="Home">
          <content>
-            <ImageView fitHeight="372.0" fitWidth="602.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="372.0" fitWidth="372.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Pictures/SmartCart_logo.png" />
+                  <Image url="@SmartCart_logo.png" />
                </image>
             </ImageView>
-         </content></Tab>
+         </content>
+      </Tab>
     <Tab text="Past Trips ">
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
