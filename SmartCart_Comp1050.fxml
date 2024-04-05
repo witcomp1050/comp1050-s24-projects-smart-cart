@@ -167,7 +167,7 @@
                <children>
                   <Accordion prefHeight="371.0" prefWidth="371.0">
                      <panes>
-                        <TitledPane animated="false" text="Thursday, March 14, 2024 ">
+                        <TitledPane fx:id="PTaccordion314" animated="false" text="Thursday, March 14, 2024 ">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -176,26 +176,26 @@
                                        <children>
                                           <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="355.0">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 1" wrappingWidth="318.13671922683716" />
-                                                <Button mnemonicParsing="false" text="+" />
+                                                <Text fx:id="PTitem1" strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 1" wrappingWidth="318.13671922683716" />
+                                                <Button fx:id="PTadditem1" mnemonicParsing="false" text="+" />
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
+                                          <HBox fx:id="item2" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 2" wrappingWidth="318.13671922683716" />
-                                                <Button mnemonicParsing="false" text="+" />
+                                                <Text fx:id="PTitem2" strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 2" wrappingWidth="318.13671922683716" />
+                                                <Button fx:id="PTadditem2" mnemonicParsing="false" text="+" />
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="44.0" prefHeight="33.0" prefWidth="355.0">
+                                          <HBox fx:id="item3" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="44.0" prefHeight="33.0" prefWidth="355.0">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 3" wrappingWidth="318.13671922683716" />
-                                                <Button mnemonicParsing="false" text="+" />
+                                                <Text fx:id="PTitem3" strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 3" wrappingWidth="318.13671922683716" />
+                                                <Button fx:id="PTadditem3" mnemonicParsing="false" text="+" />
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
+                                          <HBox fx:id="item4" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="355.0">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 4" wrappingWidth="318.13671922683716" />
-                                                <Button mnemonicParsing="false" text="+" />
+                                                <Text fx:id="PTitem4" strokeType="OUTSIDE" strokeWidth="0.0" text="  Item 4" wrappingWidth="318.13671922683716" />
+                                                <Button fx:id="PTadditem4" mnemonicParsing="false" text="+" />
                                              </children>
                                           </HBox>
                                        </children>
