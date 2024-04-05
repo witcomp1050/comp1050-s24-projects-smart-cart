@@ -253,9 +253,9 @@
                <bottom>
                   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="340.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Add" />
-                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Save" />
-                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Done" />
+                        <Button fx:id="mL_AddItemToList" mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Add" />
+                        <Button fx:id="mL_SaveThisList" mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Save" />
+                        <Button fx:id="mL_DoneToPast" mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Done" />
                      </children>
                      <BorderPane.margin>
                         <Insets top="10.0" />
@@ -267,11 +267,11 @@
                      <children>
                         <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" />
-                              <TextField prefHeight="25.0" prefWidth="276.0" />
+                              <CheckBox fx:id="mL_Checkbox" mnemonicParsing="false" />
+                              <TextField fx:id="mL_Item" prefHeight="25.0" prefWidth="276.0" />
                               <Button mnemonicParsing="false">
                                  <graphic>
-                                    <ImageView fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="mL_TrashBin" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@trash%20icon.png" />
                                        </image>
