@@ -1,9 +1,10 @@
 package edu.wit.cs.comp1050.javafx_maven_example;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class SmartCartController {
-//  code goes here
+
 	
 //	sample code for example from the template given by professor:
 //	
@@ -14,4 +15,15 @@ public class SmartCartController {
 //	
 //	To make this work, in the fxml file, add an "onAction" section to each button
 //	For example, in the example given by the professor, the fxml had onAction = "switchToSecondary" in sceneBuilder
+	
+	
+	// My List objects
+	@FXML
+	Button my_item;
+	Button mL_AddItemToList;
+	Button mL_SaveThisList;
+	Button mL_DoneToPast;
+	Button mL_TrashBin;
+	Button mL_Checkbox;
+	
 }
