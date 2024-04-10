@@ -31,6 +31,15 @@ public class SmartCartController {
 	Button mL_Checkbox;
 	TabPane savedTrip; 
 	Accordion sT_Accordion; 
+	Accordion mL_currentList; 
 	
-	
+	// To send the contents of myList to saved trips we may have to rearrange the 
+	// my list tab to have an accordion with the text lines below it. 
+	// then we can send the contents of that accordion to the saved trip tab 
+	// after that we will connect the onAction button to the following method
+	private void sendAccordionToTab() 
+	{
+		// retrieve the contents of the accordion 
+		// add/set those contents in the saved trip tab
+	}
 }
