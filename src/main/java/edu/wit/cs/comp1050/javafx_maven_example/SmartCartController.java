@@ -1,7 +1,11 @@
 package edu.wit.cs.comp1050.javafx_maven_example;
 
+
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.Accordion; 
 
 public class SmartCartController {
 
@@ -25,5 +29,8 @@ public class SmartCartController {
 	Button mL_DoneToPast;
 	Button mL_TrashBin;
 	Button mL_Checkbox;
+	TabPane savedTrip; 
+	Accordion sT_Accordion; 
+	
 	
 }
