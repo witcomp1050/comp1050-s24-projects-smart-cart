@@ -16,7 +16,7 @@ import javafx.scene.control.TreeView;
 public class SmartCartController implements Initializable{
 	
 	@FXML
-	ListView MLlistview;
+	ListView<String> MLlistview;
 	
 	@FXML
 	TreeView<String> PTtreeview, STtreeview;
@@ -90,20 +90,44 @@ public class SmartCartController implements Initializable{
             });
         });
         
-        myList = new ArrayList<>();
-        
-        
+
     }
 	
-    @FXML
-	private void selectItem(ActionEvent event) {
 
-	}
+
+	
     
 	@FXML
 	private void onAddItemToML(ActionEvent event) {
 		// For Saved Trip and Past Trip
 	    // Code to add a new item to my List
+		if(event.getSource() == STadd) {
+			TreeItem<String> selectedItem = STtreeview.getSelectionModel().getSelectedItem(); 
+			
+			
+			if (selectedItem != null && selectedItem.getParent() != null) {
+				String category = selectedItem.getParent().getValue(); 
+			 
+				String selectedValue = selectedItem.getValue(); 
+					if (myList != null && !myList.contains(selectedValue)) {
+						myList.add(selectedValue); 
+						MLlistview.getItems().add(selectedValue); 
+					}
+			}
+			
+		} else if (event.getSource() == PTadd) {
+			TreeItem<String> selectedItem = PTtreeview.getSelectionModel().getSelectedItem(); 
+			if (selectedItem != null && selectedItem.getParent() != null) {
+				String catergory = selectedItem.getParent().getValue(); 
+				
+				String selectedValue = selectedItem.getValue(); 
+					if (myList != null && !myList.contains(selectedValue)) {
+						myList.add(selectedValue); 
+						MLlistview.getItems().add(selectedValue); 
+					}
+			}
+			
+		}
 	}
 	
 	@FXML
