@@ -61,6 +61,8 @@ public class SmartCartController implements Initializable{
         pt2.add("Peppers");
         pt2.add("Onions");
         pastTrips.put("April 11, 2024", pt2);
+        
+        myList = new ArrayList<String>();
     }
 
     private void populatetreeview() {
@@ -93,10 +95,6 @@ public class SmartCartController implements Initializable{
 
     }
 	
-
-
-	
-    
 	@FXML
 	private void onAddItemToML(ActionEvent event) {
 		// For Saved Trip and Past Trip

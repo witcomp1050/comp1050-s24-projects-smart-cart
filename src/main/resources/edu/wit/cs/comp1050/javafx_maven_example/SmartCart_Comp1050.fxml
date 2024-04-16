@@ -47,7 +47,7 @@
                   </HBox>
                </bottom>
                <center>
-                  <TreeView fx:id="STtreeview" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <TreeView fx:id="STtreeview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </BorderPane.margin>
@@ -73,7 +73,7 @@
                   </HBox>
                </bottom>
                <center>
-                  <TreeView fx:id="PTtreeview" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <TreeView fx:id="PTtreeview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </BorderPane.margin>
