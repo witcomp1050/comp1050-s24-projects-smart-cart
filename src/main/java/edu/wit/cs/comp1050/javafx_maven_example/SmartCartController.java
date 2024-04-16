@@ -1,6 +1,7 @@
 package edu.wit.cs.comp1050.javafx_maven_example;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.HashMap;
@@ -29,7 +30,11 @@ public class SmartCartController implements Initializable{
 	private HashMap<String, ArrayList<String>> savedTrips;
 	
 	private ArrayList<String> myList;
-	   
+	
+	@FXML
+	private void selectItem(ActionEvent event ) {
+		
+	}
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
     	initializePreloadedTrips();
@@ -171,6 +176,23 @@ public class SmartCartController implements Initializable{
 	
 	@FXML
 	private void onDone(ActionEvent event) {
-	    // Code to add all of mylist items to the past Trips, empty out the My List page and set heaading as today's date
+	    // Code to add all of mylist items to the past Trips, empty out the My List page and set heading as today's date
+		
+		LocalDate today = LocalDate.now(); 
+		
+		TreeItem<String> root = PTtreeview.getRoot(); 
+		
+		TreeItem<String> todayCategory = new TreeItem<>(today.toString()); 
+		root.getChildren().add(todayCategory); 
+		
+		for (String item : MLlistview.getItems()) {
+			TreeItem<String> newItem = new TreeItem<>(item); 
+			todayCategory.getChildren().add(newItem); 
+		}
+		
+		MLlistview.getItems().clear(); 
 	}
+
+
+	
 }
