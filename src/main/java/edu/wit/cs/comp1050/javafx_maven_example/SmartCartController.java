@@ -46,14 +46,14 @@ public class SmartCartController implements Initializable{
         ArrayList<String> st2 = new ArrayList<>();
         st2.add("Peppers");
         st2.add("Onions");
-        savedTrips.put("Vegies", st2);
+        savedTrips.put("Vegetables", st2);
         
         
     	pastTrips = new HashMap<>();
 
         ArrayList<String> pt1 = new ArrayList<>();
-        pt1.add("Mango");
-        pt1.add("Apple");
+        pt1.add("Mangos");
+        pt1.add("Apples");
         pastTrips.put("April 1, 2024", pt1);
         
         ArrayList<String> pt2 = new ArrayList<>();
