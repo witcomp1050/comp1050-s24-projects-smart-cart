@@ -103,8 +103,23 @@ public class SmartCartController implements Initializable{
 	
 	@FXML
 	private void onDeleteItem(ActionEvent event) {
-		// For Saved Trip, Past Trip and My List
-	    // Code to remove selected item
+	    if (event.getSource() == MLdelete) {
+	        String selectedItem = (String) MLlistview.getSelectionModel().getSelectedItem();
+	        if (selectedItem != null) {
+	            myList.remove(selectedItem); // Remove from data list
+	            MLlistview.getItems().remove(selectedItem); // Update ListView
+	        }
+	    }
+	    
+	    else if (event.getSource() == STdelete) {
+	        TreeItem<String> selectedItem = STtreeview.getSelectionModel().getSelectedItem();
+	        if (selectedItem != null && selectedItem.getParent() != null) {
+	            String category = selectedItem.getParent().getValue();
+	            ArrayList<String> items = savedTrips.get(category);
+	            items.remove(selectedItem.getValue()); // Remove from data list
+	            selectedItem.getParent().getChildren().remove(selectedItem); // Update TreeView
+	        }
+	    }
 	}
 	
 	@FXML
