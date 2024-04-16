@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 
@@ -88,6 +89,10 @@ public class SmartCartController implements Initializable{
                 categoryName.getChildren().add(itemName);
             });
         });
+        
+        myList = new ArrayList<>();
+        
+        
     }
 	
     @FXML
@@ -124,8 +129,18 @@ public class SmartCartController implements Initializable{
 	
 	@FXML
 	private void onAddNewItem(ActionEvent event) {
-	    // Code to open pop up, take the item name and add new item to my list
-	}
+	    TextInputDialog dialog = new TextInputDialog();
+	    dialog.setTitle("Add New Item");
+	    dialog.setHeaderText("Add a New Item to My List");
+	    dialog.setContentText("Please enter the name of the new item:");
+	    dialog.showAndWait();
+	    
+	    String itemName = dialog.getResult();
+	    if (!itemName.isEmpty()) {
+	            myList.add(itemName);
+	            MLlistview.getItems().add(itemName);
+	        }
+		}
 
 	@FXML
 	private void onSaveML(ActionEvent event) {
