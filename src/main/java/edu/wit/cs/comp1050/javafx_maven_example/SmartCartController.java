@@ -60,12 +60,12 @@ public class SmartCartController implements Initializable{
         ArrayList<String> pt1 = new ArrayList<>();
         pt1.add("Mangos");
         pt1.add("Apples");
-        pastTrips.put("April 1, 2024", pt1);
+        pastTrips.put("2024-04-01", pt1);
         
         ArrayList<String> pt2 = new ArrayList<>();
         pt2.add("Peppers");
         pt2.add("Onions");
-        pastTrips.put("April 11, 2024", pt2);
+        pastTrips.put("2024-04-11", pt2);
         
         myList = new ArrayList<String>();
     }
