@@ -107,7 +107,6 @@ public class SmartCartController implements Initializable{
 		if(event.getSource() == STadd) {
 			TreeItem<String> selectedItem = STtreeview.getSelectionModel().getSelectedItem(); 
 			
-			
 			if (selectedItem != null && selectedItem.getParent() != null) {
 				String category = selectedItem.getParent().getValue(); 
 			 
@@ -171,7 +170,23 @@ public class SmartCartController implements Initializable{
 
 	@FXML
 	private void onSaveML(ActionEvent event) {
-		// Code to open pop up, take the List name and save list to Saved Trips
+		TextInputDialog dialog = new TextInputDialog();
+		dialog.setTitle("Add New Item");
+		dialog.setHeaderText("Add a New Item to My List");
+		dialog.setContentText("Please enter the name of the new item:");
+		dialog.showAndWait();
+		
+		TreeItem<String> root = STtreeview.getRoot(); 
+		
+		TreeItem<String> todayCategory = new TreeItem<>(dialog.getResult()); 
+		root.getChildren().add(todayCategory); 
+		
+		for (String item : MLlistview.getItems()) {
+			TreeItem<String> newItem = new TreeItem<>(item); 
+			todayCategory.getChildren().add(newItem); 
+		}
+		
+		MLlistview.getItems().clear(); 
 	}
 	
 	@FXML
