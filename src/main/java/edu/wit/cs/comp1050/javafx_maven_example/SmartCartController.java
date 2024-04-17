@@ -209,42 +209,44 @@ public class SmartCartController implements Initializable{
 
 	@FXML
 	private void onSaveML(ActionEvent event) {
-		TextInputDialog dialog = new TextInputDialog();
-		dialog.setTitle("Add New Item");
-		dialog.setHeaderText("Add a New Item to My List");
-		dialog.setContentText("Please enter the name of the new item:");
-		dialog.showAndWait();
+		if (!MLlistview.getItems().isEmpty()) {
+			TextInputDialog dialog = new TextInputDialog();
+			dialog.setTitle("Add New Item");
+			dialog.setHeaderText("Add a New Item to My List");
+			dialog.setContentText("Please enter the name of the new item:");
+			dialog.showAndWait();
+			
+			TreeItem<String> root = STtreeview.getRoot(); 
+			
+			TreeItem<String> todayCategory = new TreeItem<>(dialog.getResult()); 
+			root.getChildren().add(todayCategory); 
 		
-		TreeItem<String> root = STtreeview.getRoot(); 
+			for (String item : MLlistview.getItems()) {
+				TreeItem<String> newItem = new TreeItem<>(item); 
+				todayCategory.getChildren().add(newItem); 
+			}
 		
-		TreeItem<String> todayCategory = new TreeItem<>(dialog.getResult()); 
-		root.getChildren().add(todayCategory); 
-		
-		for (String item : MLlistview.getItems()) {
-			TreeItem<String> newItem = new TreeItem<>(item); 
-			todayCategory.getChildren().add(newItem); 
+			MLlistview.getItems().clear(); 
 		}
-		
-		MLlistview.getItems().clear(); 
 	}
 	
 	@FXML
 	private void onDone(ActionEvent event) {
-	    // Code to add all of mylist items to the past Trips, empty out the My List page and set heading as today's date
-		
-		LocalDate today = LocalDate.now(); 
-		
-		TreeItem<String> root = PTtreeview.getRoot(); 
-		
-		TreeItem<String> todayCategory = new TreeItem<>(today.toString()); 
-		root.getChildren().add(todayCategory); 
-		
-		for (String item : MLlistview.getItems()) {
-			TreeItem<String> newItem = new TreeItem<>(item); 
-			todayCategory.getChildren().add(newItem); 
+		if (!MLlistview.getItems().isEmpty()) {
+			LocalDate today = LocalDate.now(); 
+			
+			TreeItem<String> root = PTtreeview.getRoot(); 
+			
+			TreeItem<String> todayCategory = new TreeItem<>(today.toString()); 
+			root.getChildren().add(0, todayCategory); 
+			
+			for (String item : MLlistview.getItems()) {
+				TreeItem<String> newItem = new TreeItem<>(item); 
+				todayCategory.getChildren().add(newItem); 
+			}
+			
+			MLlistview.getItems().clear();
 		}
-		
-		MLlistview.getItems().clear(); 
 	}
 
 
