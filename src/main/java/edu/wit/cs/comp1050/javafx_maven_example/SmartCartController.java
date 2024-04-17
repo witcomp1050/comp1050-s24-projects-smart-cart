@@ -35,15 +35,11 @@ public class SmartCartController implements Initializable{
 	
 	private ArrayList<String> myList = new ArrayList<String>();
 	
-	@FXML
-	private void selectItem(ActionEvent event ) {
-		
-	}
+
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
     	savedTrips = loadTripsFromFile("/comp1050-s24-projects-smart-cart/src/main/resources/edu/wit/cs/comp1050/javafx_maven_example/savedTrips.txt");
     	pastTrips = loadTripsFromFile("/comp1050-s24-projects-smart-cart/src/main/resources/edu/wit/cs/comp1050/javafx_maven_example/pastTrips.txt");
-//    	initializePreloadedTrips();
         populatetreeview();
 	}
     
@@ -72,45 +68,6 @@ public class SmartCartController implements Initializable{
         
         return data;
     }
-    
-//    private void initializePreloadedTrips() {
-//        savedTrips = new HashMap<>();
-//        
-//        ArrayList<String> st1 = new ArrayList<>();
-//        st1.add("Tostitos chips");
-//        st1.add("Chip Dip");
-//        st1.add("2-liter sodas"); 
-//        st1.add("Disposable Cutlery"); 
-//        st1.add("Cake"); 
-//        savedTrips.put("Hosting Party", st1);
-//        
-//        ArrayList<String> st2 = new ArrayList<>();
-//        st2.add("Peppers");
-//        st2.add("Onions");
-//        st2.add("Chicken Breast"); 
-//        st2.add("Spices"); 
-//        st2.add("Rice"); 
-//        savedTrips.put("Meal Prep", st2);
-//        
-//        
-//    	pastTrips = new HashMap<>();
-//
-//        ArrayList<String> pt1 = new ArrayList<>();
-//        pt1.add("Mangos");
-//        pt1.add("Apples");
-//        pt1.add("Honey"); 
-//        pt1.add("Napkins"); 
-//        pt1.add("Ice Cream"); 
-//        pastTrips.put("2024-04-01", pt1);
-//        
-//        ArrayList<String> pt2 = new ArrayList<>();
-//        pt2.add("Peppers");
-//        pt2.add("Onions");
-//        pt2.add("Pringles"); 
-//        pt2.add("Pasta") ; 
-//        pt2.add("Alfredo sauce"); 
-//        pastTrips.put("2024-04-11", pt2);
-//    }
 
     private void populatetreeview() {
     	TreeItem<String> root1 = new TreeItem<>("All Items");
@@ -138,8 +95,6 @@ public class SmartCartController implements Initializable{
                 categoryName.getChildren().add(itemName);
             });
         });
-        
-
     }
 	
 	@FXML
@@ -156,7 +111,7 @@ public class SmartCartController implements Initializable{
 			
 		} else if (event.getSource() == PTadd) {
 			TreeItem<String> selectedItem = PTtreeview.getSelectionModel().getSelectedItem();
-	        if (selectedItem != null && selectedItem.isLeaf()) { // Check if the item is a leaf
+	        if (selectedItem != null && selectedItem.isLeaf()) {
 	            String selectedValue = selectedItem.getValue();
 	            if (myList != null && !myList.contains(selectedValue)) {
 	                myList.add(selectedValue);
@@ -173,8 +128,8 @@ public class SmartCartController implements Initializable{
 	    if (event.getSource() == MLdelete) {
 	        String selectedItem = (String) MLlistview.getSelectionModel().getSelectedItem();
 	        if (selectedItem != null) {
-	            myList.remove(selectedItem); // Remove from data list
-	            MLlistview.getItems().remove(selectedItem); // Update ListView
+	            myList.remove(selectedItem);
+	            MLlistview.getItems().remove(selectedItem);
 	        }
 	    }
 	    
@@ -183,8 +138,8 @@ public class SmartCartController implements Initializable{
 	        if (selectedItem != null && selectedItem.isLeaf()) {
 	            String category = selectedItem.getParent().getValue();
 	            ArrayList<String> items = savedTrips.get(category);
-	            items.remove(selectedItem.getValue()); // Remove from data list
-	            selectedItem.getParent().getChildren().remove(selectedItem); // Update TreeView
+	            items.remove(selectedItem.getValue());
+	            selectedItem.getParent().getChildren().remove(selectedItem);
 	        }
 	    }
 	}
@@ -248,8 +203,11 @@ public class SmartCartController implements Initializable{
 		}
 	}
 	
+	
+    // Code runs but changes dont show up in txt file though it shows up on github -> ?????
+	// Need to find out why and fix ASAP
 	private void saveToFile(HashMap<String, ArrayList<String>> trips, String fileName) {
-	    try (FileWriter writer = new FileWriter(fileName, false)) { // Set append to false to overwrite
+	    try (FileWriter writer = new FileWriter(fileName)) {
 	        for (String category : trips.keySet()) {
 	            writer.write(category);
 	            System.out.printf("%n%s: ", category);
@@ -264,6 +222,4 @@ public class SmartCartController implements Initializable{
 	    }
 	}
 
-	
-	
 }
