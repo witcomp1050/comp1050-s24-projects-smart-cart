@@ -45,14 +45,20 @@ public class SmartCartController implements Initializable{
         savedTrips = new HashMap<>();
         
         ArrayList<String> st1 = new ArrayList<>();
-        st1.add("Mango");
-        st1.add("Apple");
-        savedTrips.put("Fruits", st1);
+        st1.add("Tostitos chips");
+        st1.add("Chip Dip");
+        st1.add("2-liter sodas"); 
+        st1.add("Disposable Cutlery"); 
+        st1.add("Cake"); 
+        savedTrips.put("Hosting Party", st1);
         
         ArrayList<String> st2 = new ArrayList<>();
         st2.add("Peppers");
         st2.add("Onions");
-        savedTrips.put("Vegetables", st2);
+        st2.add("Chicken Breast"); 
+        st2.add("Spices"); 
+        st2.add("Rice"); 
+        savedTrips.put("Meal Prep", st2);
         
         
     	pastTrips = new HashMap<>();
@@ -60,11 +66,17 @@ public class SmartCartController implements Initializable{
         ArrayList<String> pt1 = new ArrayList<>();
         pt1.add("Mangos");
         pt1.add("Apples");
+        pt1.add("Honey"); 
+        pt1.add("Napkins"); 
+        pt1.add("Ice Cream"); 
         pastTrips.put("2024-04-01", pt1);
         
         ArrayList<String> pt2 = new ArrayList<>();
         pt2.add("Peppers");
         pt2.add("Onions");
+        pt2.add("Pringles"); 
+        pt2.add("Pasta") ; 
+        pt2.add("Alfredo sauce"); 
         pastTrips.put("2024-04-11", pt2);
         
         myList = new ArrayList<String>();
