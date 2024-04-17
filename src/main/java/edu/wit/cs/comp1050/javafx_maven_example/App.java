@@ -19,7 +19,6 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("SmartCart_Comp1050"), 500, 400);
-        stage.setTitle("Smart Cart: CS 1050 Project");
         stage.setScene(scene);
         stage.show();
     }
