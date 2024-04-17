@@ -1,5 +1,6 @@
 package edu.wit.cs.comp1050.javafx_maven_example;
 
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -113,7 +114,7 @@ public class SmartCartController implements Initializable{
     }
 	
 	@FXML
-	private void onAddItemToML(ActionEvent event) {
+	private void onAddItemToML(ActionEvent event) throws RuntimeException {
 		// For Saved Trip and Past Trip
 	    // Code to add a new item to my List
 		if(event.getSource() == STadd) {
@@ -121,6 +122,17 @@ public class SmartCartController implements Initializable{
 			
 			if (selectedItem != null && selectedItem.getParent() != null) {
 				String category = selectedItem.getParent().getValue(); 
+				
+			if (!savedTrips.containsKey(category)) {
+				ArrayList<String> items = savedTrips.get(category); 
+				for (String item : items ) { 
+					if (!myList.contains(item)) {
+						myList.add(item); 
+						MLlistview.getItems().add(item);
+					}
+				}
+			 
+			}
 			 
 				String selectedValue = selectedItem.getValue(); 
 					if (myList != null && !myList.contains(selectedValue)) {
@@ -134,6 +146,19 @@ public class SmartCartController implements Initializable{
 			if (selectedItem != null && selectedItem.getParent() != null) {
 				String catergory = selectedItem.getParent().getValue(); 
 				
+				if (!pastTrips.containsKey(catergory)) {
+					ArrayList<String> items = pastTrips.get(catergory); 
+					
+					for (String item : items) {
+						if (!myList.contains(item)) {
+							myList.add(item); 
+							MLlistview.getItems().add(item); 
+							
+						}
+					}
+					
+				} 
+				
 				String selectedValue = selectedItem.getValue(); 
 					if (myList != null && !myList.contains(selectedValue)) {
 						myList.add(selectedValue); 
@@ -143,6 +168,8 @@ public class SmartCartController implements Initializable{
 			
 		}
 	}
+	
+	
 	
 	@FXML
 	private void onDeleteItem(ActionEvent event) {
