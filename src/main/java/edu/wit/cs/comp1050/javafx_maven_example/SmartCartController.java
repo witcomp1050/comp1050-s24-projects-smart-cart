@@ -1,6 +1,5 @@
 package edu.wit.cs.comp1050.javafx_maven_example;
 
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -115,58 +114,26 @@ public class SmartCartController implements Initializable{
 	
 	@FXML
 	private void onAddItemToML(ActionEvent event) throws RuntimeException {
-		// For Saved Trip and Past Trip
-	    // Code to add a new item to my List
 		if(event.getSource() == STadd) {
 			TreeItem<String> selectedItem = STtreeview.getSelectionModel().getSelectedItem(); 
-			
-			if (selectedItem != null && selectedItem.getParent() != null) {
-				String category = selectedItem.getParent().getValue(); 
-				
-			if (!savedTrips.containsKey(category)) {
-				ArrayList<String> items = savedTrips.get(category); 
-				for (String item : items ) { 
-					if (!myList.contains(item)) {
-						myList.add(item); 
-						MLlistview.getItems().add(item);
-					}
-				}
-			 
-			}
-			 
+			if (selectedItem != null && selectedItem.isLeaf()) {
 				String selectedValue = selectedItem.getValue(); 
-					if (myList != null && !myList.contains(selectedValue)) {
-						myList.add(selectedValue); 
-						MLlistview.getItems().add(selectedValue); 
-					}
+				if (myList != null && !myList.contains(selectedValue)) {
+					myList.add(selectedValue); 
+					MLlistview.getItems().add(selectedValue); 
+				}
 			}
 			
 		} else if (event.getSource() == PTadd) {
-			TreeItem<String> selectedItem = PTtreeview.getSelectionModel().getSelectedItem(); 
-			if (selectedItem != null && selectedItem.getParent() != null) {
-				String catergory = selectedItem.getParent().getValue(); 
-				
-				if (!pastTrips.containsKey(catergory)) {
-					ArrayList<String> items = pastTrips.get(catergory); 
-					
-					for (String item : items) {
-						if (!myList.contains(item)) {
-							myList.add(item); 
-							MLlistview.getItems().add(item); 
-							
-						}
-					}
-					
-				} 
-				
-				String selectedValue = selectedItem.getValue(); 
-					if (myList != null && !myList.contains(selectedValue)) {
-						myList.add(selectedValue); 
-						MLlistview.getItems().add(selectedValue); 
-					}
-			}
-			
-		}
+			TreeItem<String> selectedItem = PTtreeview.getSelectionModel().getSelectedItem();
+	        if (selectedItem != null && selectedItem.isLeaf()) { // Check if the item is a leaf
+	            String selectedValue = selectedItem.getValue();
+	            if (myList != null && !myList.contains(selectedValue)) {
+	                myList.add(selectedValue);
+	                MLlistview.getItems().add(selectedValue);
+	            }
+	        }
+		} 
 	}
 	
 	
@@ -183,7 +150,7 @@ public class SmartCartController implements Initializable{
 	    
 	    else if (event.getSource() == STdelete) {
 	        TreeItem<String> selectedItem = STtreeview.getSelectionModel().getSelectedItem();
-	        if (selectedItem != null && selectedItem.getParent() != null) {
+	        if (selectedItem != null && selectedItem.isLeaf()) {
 	            String category = selectedItem.getParent().getValue();
 	            ArrayList<String> items = savedTrips.get(category);
 	            items.remove(selectedItem.getValue()); // Remove from data list
@@ -211,9 +178,9 @@ public class SmartCartController implements Initializable{
 	private void onSaveML(ActionEvent event) {
 		if (!MLlistview.getItems().isEmpty()) {
 			TextInputDialog dialog = new TextInputDialog();
-			dialog.setTitle("Add New Item");
-			dialog.setHeaderText("Add a New Item to My List");
-			dialog.setContentText("Please enter the name of the new item:");
+			dialog.setTitle("Save your List");
+			dialog.setHeaderText("What would you like to name your new list");
+			dialog.setContentText("Please enter the name of the new list:");
 			dialog.showAndWait();
 			
 			TreeItem<String> root = STtreeview.getRoot(); 

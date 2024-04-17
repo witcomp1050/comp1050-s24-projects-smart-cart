@@ -9,9 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-/**
- * JavaFX App
- */
+
 public class App extends Application {
 
     private static Scene scene;
@@ -34,7 +32,6 @@ public class App extends Application {
        
         URL locfxml = App.class.getResource(loc);
 
-        //handle a null locfxml if in a jar
         if (locfxml == null) {
             String jar_res = App.class.getPackageName().replace('.','/');
             jar_res = '/' + jar_res + '/'; 
