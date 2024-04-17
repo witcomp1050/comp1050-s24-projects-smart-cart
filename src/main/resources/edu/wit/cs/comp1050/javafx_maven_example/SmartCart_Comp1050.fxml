@@ -21,7 +21,7 @@
                <children>
                   <ImageView fitHeight="343.0" fitWidth="500.0" layoutX="79.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@SmartCart_logo.png" />
+                        <Image url="@../../../../../../../../../../../../Downloads/SmartCart_logo.png" />
                      </image>
                   </ImageView>
                </children>
